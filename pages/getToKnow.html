@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <div id="hintDiv" style="display:inline-block; width: 100%">
+      <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+    </div>  
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text">Insert Next Puzzle Here</p>
+
+    <img id='bigDirectionArrows' src="../resources/directionArrow.png" usemap="#image-map">
+    <map name="image-map">
+        <area target="_self" alt="Both" title="Both" coords="101,2,153,70" shape="rect" onclick="addAnswer('both')">
+        <area target="_self" alt="Alexis" title="Alexis" coords="138,71,255,106" shape="rect" onclick="addAnswer('alexis')">
+        <area target="_self" alt="Neither" title="Neither" coords="90,107,169,169" shape="rect" onclick="addAnswer('neither')">
+        <area target="_self" alt="Grant" title="Grant" coords="9,70,110,105" shape="rect" onclick="addAnswer('grant')">
+    </map>
+
+      <div id="answerArea"></div>
+
+      <div id="buttonDiv">
+      <button id = 'submit' class ='btn btn-primary m-2' onclick = "checkAnswer()">Submit</button>
+      <button id = 'reset' class ='btn btn-primary m-2' onclick = "reset()">Reset</button>
+      </div>
+      <button id="next" class="btn btn-primary" onclick = 'window.location.href = "../pages/wordle.html"'>Next</button>
+
+      <script src='../js/getToKnow.js'></script>
+  </body>
+</html>

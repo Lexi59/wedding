@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">    
+  </head>
+  <body>
+    <div id="hintDiv" style="display:inline-block; width: 100%">
+      <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+    </div>  
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text"></p>
+      <div id="key" style="width:80%;margin:0 auto; padding: 0;">
+        <img src = "../resources/selector.png" style="width:15%; float:left; position: absolute; top: 33vw; left: 12vw;">
+        <div style="margin:0; padding: 0; width:54%; z-index: -1; height: 4vw; background-color: black; position:absolute; top: 38vw; left: 19%"></div>
+        <div class = "keyKnob" style="top: 40vw; left: 28%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 33%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 38%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 43%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 48%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 53%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 58%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 63%"></div>
+        <div class = "keyKnob" style=" top: 40vw; left: 68%"></div>
+      </div>
+      <div id="listArea" style = "position: absolute; top: 64vw">
+        <ul id = "list">
+          <li id=0 onclick="select(event)">"I love you" - 1</li>
+          <li id=1 onclick="select(event)">Closed on First Home - 3</li>
+          <li id=2 onclick="select(event)">First met - 5</li>
+          <li id=3 onclick="select(event)">First Kiss - 4</li>
+          <li id=4 onclick="select(event)">Wedding - 5</li>
+          <li id=5 onclick="select(event)">First Date - 3</li>
+          <li id=6 onclick="select(event)">First Vacation - 2</li>
+          <li id=7 onclick="select(event)">Moved to Watertown - 4</li>
+          <li id=8 onclick="select(event)">Proposal - 2</li>
+        </ul>
+          <div id="directionArrows">
+            <button class='dirBtn' onclick="moveUp();">⬆️</button>
+            <button class='dirBtn'onclick="moveDown();">⬇️</button>
+          </div>
+       </div>
+
+      <button id="submit" class="btn btn-primary mt-3" style = "width: 80%; position: absolute; top: 125vw; left: 10vw" onclick="checkAnswers()">Submit</button>
+      <button id="next" class="btn btn-primary" onclick = 'nextThing();'>Next</button>
+
+      <script src='../js/key.js'></script>
+      
+  </body>
+</html>

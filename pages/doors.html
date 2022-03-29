@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <div id="hintDiv" style="display:inline-block; width: 100%">
+      <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+    </div>  
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text"></p>
+      <div id = 'doorDiv'></div>
+      <div id="bar" class="progress">
+        <div id = 'progress' class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="11" style="width: 0%;"></div>
+      </div>
+      <button id="next" class="btn btn-primary" onclick = 'nextThing();'>Next</button>
+
+      <script src='../js/doors.js'></script>
+  </body>
+</html>

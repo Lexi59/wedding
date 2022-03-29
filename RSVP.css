@@ -1,0 +1,283 @@
+ .u-section-1 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/carlson_AR-0076-36.jpg");
+  background-position: 47.58% 46.73%;
+  background-size: 150%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 800px;
+}
+
+.u-section-1 .u-group-1 {
+  width: 730px;
+  min-height: 416px;
+  background-image: none;
+  margin: 258px auto 60px;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 14px 30px;
+}
+
+.u-section-1 .u-text-1 {
+  margin: 11px auto 0;
+}
+
+.u-section-1 .u-text-2 {
+  width: 512px;
+  margin: 26px auto 0;
+}
+
+.u-section-1 .u-form-1 {
+  height: 64px;
+  width: 512px;
+  margin: 45px auto 0;
+}
+
+.u-section-1 .u-input-1 {
+  height: 48px;
+}
+
+.u-section-1 .u-btn-1 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 660px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-left: 57px;
+    margin-right: 57px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 506px;
+  }
+
+  .u-section-1 .u-group-1 {
+    width: 720px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 380px;
+  }
+
+  .u-section-1 .u-group-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-1 {
+    background-position: 49.2% 54.14%;
+    background-size: auto 235%;
+  }
+
+  .u-section-1 .u-sheet-1 {
+    min-height: 675px;
+  }
+
+  .u-section-1 .u-group-1 {
+    margin-top: 155px;
+    min-height: 417px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: 320px;
+  }
+
+  .u-section-1 .u-form-1 {
+    width: 320px;
+  }
+}.u-section-2 .u-sheet-1 {
+  min-height: 956px;
+}
+
+.u-section-2 .u-group-1 {
+  width: 645px;
+  min-height: 846px;
+  margin: 50px auto 60px;
+}
+
+.u-section-2 .u-container-layout-1 {
+  padding: 0 30px 30px;
+}
+
+.u-section-2 .u-text-1 {
+  font-size: 3.75rem;
+  margin: 7px auto 0;
+}
+
+.u-section-2 .u-text-2 {
+  width: 345px;
+  margin: -13px auto 0;
+}
+
+.u-section-2 .u-text-3 {
+  margin: 23px 5px 0;
+}
+
+.u-section-2 .u-group-2 {
+  width: 395px;
+  min-height: 36px;
+  margin: 23px auto 0;
+}
+
+.u-section-2 .u-btn-1 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+  background-image: none;
+  margin: 0 auto 0 0;
+}
+
+.u-section-2 .u-btn-2 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+  background-image: none;
+  margin: -36px 0 0 auto;
+}
+
+.u-section-2 .u-form-1 {
+  height: 409px;
+  margin: 23px 0 -158px 15px;
+}
+
+.u-section-2 .u-form-group-2 {
+  margin-left: 0;
+}
+
+.u-section-2 .u-form-group-3 {
+  margin-left: 0;
+}
+
+@media (max-width: 767px) {
+  .u-section-2 .u-group-1 {
+    width: 540px;
+  }
+
+  .u-section-2 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-2 .u-text-3 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-2 .u-form-1 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-2 .u-group-1 {
+    margin-bottom: 22px;
+    min-height: 884px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .u-section-2 .u-text-2 {
+    width: 320px;
+  }
+
+  .u-section-2 .u-group-2 {
+    width: 320px;
+  }
+
+  .u-section-2 .u-btn-1 {
+    margin-left: auto;
+  }
+
+  .u-section-2 .u-btn-2 {
+    margin-top: 20px;
+    margin-right: auto;
+  }
+} .u-section-3 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/carlson_AR-9892-37.jpg");
+  background-position: 50% 40.4%;
+}
+
+.u-section-3 .u-sheet-1 {
+  min-height: 401px;
+}
+
+.u-section-3 .u-text-1 {
+  margin: 102px auto 0;
+}
+
+.u-section-3 .u-text-2 {
+  width: 826px;
+  margin: 38px auto 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 331px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 254px;
+  }
+
+  .u-section-3 .u-text-2 {
+    width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 191px;
+  }
+
+  .u-section-3 .u-text-2 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 120px;
+  }
+
+  .u-section-3 .u-text-2 {
+    width: 340px;
+  }
+}@font-face {
+  font-family: 'RosabeliaSLDT';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/RosabeliaSLDT.otf);
+}

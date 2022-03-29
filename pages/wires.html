@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <div id="hintDiv" style="display:inline-block; width: 100%">
+      <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+    </div>  
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text"></p>
+
+      <div id="wireSpace">
+        <div class="wireRow"><h3 class="wireNum">1</h3> <img id='1' src="../resources/selector.png" class="selector selLeft" onclick="select(1)"><img id='A' src="../resources/selector.png" class="selector selRight" onclick="select('A')"><img src="../resources/firstAid.png" class="wirePhoto"></div>
+        <div class="wireRow"><h3 class="wireNum">2</h3><img id="2" src="../resources/selector.png" class="selector selLeft" onclick="select(2)"><img id='B' src="../resources/selector.png" class="selector selRight" onclick="select('B')"><img src="../resources/clock.png" class="wirePhoto"></div>
+        <div class="wireRow"><h3 class="wireNum">3</h3><img id="3" src="../resources/selector.png" class="selector selLeft" onclick="select(3)"><img id="C" src="../resources/selector.png" class="selector selRight" onclick="select('C')"><img src="../resources/house.jpg" class="wirePhoto"></div>
+        <div class="wireRow"><h3 class="wireNum">4</h3><img id="4" src="../resources/selector.png" class="selector selLeft" onclick="select(4)"><img id="D" src="../resources/selector.png" class="selector selRight" onclick="select('D')"><img src="../resources/cruise.png" class="wirePhoto"></div>
+      </div> 
+      <div id="colorDiv" class="pt-3">
+
+      </div>
+
+      <button id="submit" class="btn btn-primary mt-3" onclick="checkAnswers()">Submit</button>
+      <button id="reset" class="btn btn-secondary mt-3" onclick="reset()">Reset</button>
+      <button id="next" class="btn btn-primary" onclick = 'nextThing();'>Next</button>
+
+      <script src='../js/wires.js'></script>
+  </body>
+</html>

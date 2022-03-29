@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <div id="hintDiv" style="display:inline-block; width: 100%">
+      <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+    </div>  
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text"></p>
+
+      <div id="cipherContainer">
+        <img class = "cipherImg" id = 'outerLayer' src ='../resources/outerLayer.png' style = "z-index: -4; width: 80%; top:75vw" onclick = "rotate('outerLayer')">
+        <img class = "cipherImg" id = 'secondLayer' src = '../resources/secondLayer.png' style = "z-index: -3; width: 66%; top:82vw; left: 16vw" onclick = "rotate('secondLayer')">
+        <img class = "cipherImg" id = 'thirdLayer' src = '../resources/thirdLayer.png' style = "z-index: -2; width: 55%; top:88vw; left:22vw" onclick = "rotate('thirdLayer')">
+        <img class = "cipherImg" id = 'innerLayer' src = '../resources/innerLayer.png' style = "z-index: -1; width: 45%; top:93vw; left:27vw" onclick = "rotate('innerLayer')"> 
+      </div>
+      <form class= "form" id ='cipherForm'>
+        <div class="form-group">
+          <input type="text" class="form-control" id="answer">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+      </form>
+      <button id="next" class="btn btn-primary" onclick = 'nextThing();'>Next</button>
+
+      <script src='../js/cipher.js'></script>
+  </body>
+</html>

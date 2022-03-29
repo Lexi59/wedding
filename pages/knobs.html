@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <div id="hintDiv" style="display:inline-block; width: 100%">
+      <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+    </div>  
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text"></p>
+
+      <div id="photoDiv">
+
+      </div>
+
+      <button id="submit" class="btn btn-primary mt-3" onclick="checkAnswers()">Submit</button>
+      <button id="next" class="btn btn-primary" onclick = 'nextThing();'>Next</button>
+
+      <script src='../js/knob.js'></script>
+  </body>
+</html>

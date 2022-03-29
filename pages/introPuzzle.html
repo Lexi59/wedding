@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+<div id="hintDiv" style="display:inline-block; width: 100%">
+  <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+</div>  
+      <h1>Server Code</h1>
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text" style="font-size:smaller;">I’ve highlighted the sections of code I think have problems. Any ideas how to fix it?</p>
+      <pre class = 'code'>
+      let name = ‘GAC’. 
+
+      function setup(){
+          var inputs = [7, <span class="highlight">00001100</span>, 23, 24];
+          configure(inputs);
+          var <span class ='highlight'>teachingSpeed</span> = 0.9;
+      }
+      function introduction(){
+          console.log(“Hi, my name is &name.”);
+          // continue intro
+          var username = askForName();
+          saveUsername(username);
+      }
+      function beginStory(){
+          // Story of how we met
+          part1();
+          <span class="highlight">reconfigure()</span>;     
+      }
+      function showPhoto(photo){
+          displayPhoto(photo);
+      }
+      </pre>
+
+      <form class= form id ='introPuzzleForm'>
+        <div class="form-group">
+          <label for="first" class="form-label">00001100</label>
+          <input type="text" class="form-control" id="first" placeholder="Replace with...">
+        </div>
+        <div class="form-group">
+          <label for="second" class="form-label">teachingSpeed</label>
+          <input type="text" class="form-control" id="second" placeholder="Replace with...">
+        </div>
+        <div class="form-group">
+          <label for="third" class="form-label">reconfigure()</label>
+          <input type="text" class="form-control" id="third" placeholder="Replace with...">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+      </form>
+      <button class = 'btn btn-primary' id="next" onclick = 'compile()'>Compile</button>
+      <script src='../js/introPuzzle.js'></script>
+  </body>
+</html>

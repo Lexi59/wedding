@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Welcome</title>
+    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+    <div id="hintDiv" style="display:inline-block; width: 100%">
+      <button class='btn' style=' width: 5%; margin: 1% 1% 1% 90%; display: block;' id="helpBtn" onclick="showHint();">?</button>
+    </div>  
+      <img id='GAC' class="GACImage" style="padding-top: 1%"></img>
+      <p id="text"></p>
+      <div id="images">
+        <img id = 'soccerBall' src="../resources/soccer.png">
+        <img id='soccerWords' src="../resources/soccerWords.png" usemap="#image-map">
+
+        <map name="image-map">
+            <area target="_self" alt="ILoveYou" title="ILoveYou"  coords="59,123,128,143" shape="rect" onclick = "handleClick('ILoveYou')">
+            <area target="_self" alt="Met" title="Met"  coords="144,173,177,193" shape="rect" onclick = "handleClick('Met')">
+            <area target="_self" alt="FirstKiss" title="FirstKiss"  coords="179,218,217,256" shape="rect" onclick = "handleClick('FirstKiss')">
+            <area target="_self" alt="81121" title="81121"  coords="127,275,188,297" shape="rect" onclick = "handleClick('81121')">
+            <area target="_self" alt="22520" title="22520"  coords="52,194,117,216" shape="rect" onclick = "handleClick('22520')">
+            <area target="_self" alt="81817" title="81817"  coords="220,144,277,162" shape="rect" onclick = "handleClick('81817')">
+            <area target="_self" alt="MetFamilies" title="MetFamilies"  coords="327,162,391,202" shape="rect" onclick = "handleClick('MetFamilies')">
+            <area target="_self" alt="Engaged" title="Engaged"  coords="59,326,127,348" shape="rect" onclick = "handleClick('Engaged')">
+            <area target="_self" alt="91817" title="91817"  coords="236,304,297,327" shape="rect" onclick = "handleClick('91817')">
+            <area target="_self" alt="101418" title="101418"  coords="317,275,384,296" shape="rect" onclick = "handleClick('101418')">
+            <area target="_self" alt="71819" title="71819"  coords="170,367,224,387" shape="rect" onclick = "handleClick('71819')">
+            <area target="_self" alt="Dating" title="Dating"  coords="279,223,332,245" shape="rect" onclick = "handleClick('Dating')">
+        </map>
+      </div>
+      <button id="next" class="btn btn-primary" onclick = 'nextThing();'>Next</button>
+
+      <script src='../js/soccerBall.js'></script>
+  </body>
+</html>
