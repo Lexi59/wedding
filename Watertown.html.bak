@@ -174,7 +174,7 @@
             <div class="u-layout-row" style="">
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-white u-layout-cell-1" src="">
                 <div class="u-container-layout u-valign-middle-xl u-container-layout-1">
-                  <p class="u-large-text u-text u-text-palette-1-base u-text-variant u-text-1">
+                  <p class="u-large-text u-text u-text-default u-text-palette-1-base u-text-variant u-text-1">
                     <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="https://www.brambleparkzoo.com/" target="_blank">Bramble Park Zoo</a>
                   </p>
                   <p class="u-text u-text-2"><b>Zoo</b>
@@ -263,7 +263,7 @@
                 <div class="u-container-layout u-container-layout-1" src=""></div>
               </div>
               <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-white u-layout-cell-2" src="">
-                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-2">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
                   <p class="u-large-text u-text u-text-palette-1-base u-text-variant u-text-1">
                     <a href="https://www.watertownbrewing.com/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">Watertown Brewing Company</a>
                   </p>
@@ -329,7 +329,7 @@
               <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-white u-layout-cell-2" src="">
                 <div class="u-container-layout u-valign-middle-xl u-container-layout-2">
                   <p class="u-large-text u-text u-text-palette-1-base u-text-variant u-text-1">
-                    <a href="https://www.watertownbrewing.com/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">Guadalajara</a>
+                    <a href="https://www.watertownbrewing.com/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank">Quadalajara</a>
                   </p>
                   <p class="u-text u-text-2">
                     <span style="font-weight: 700;">Mexican<br>
