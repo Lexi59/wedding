@@ -15,15 +15,34 @@ const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 var rsvps = db.collection("rsvps");
 
-async function updateEntry(firstName, lastName, attending, num=0, diet='', comment=''){
+async function updateFamily(familyNum, attending, num, diet, comment){
     try{
         var entries = await rsvps.get();
         var found = false;
         entries.forEach(e => {
             var dat = e.data();
+            if(dat.familyNum == familyNum){
+                found = true;
+                rsvps.doc(e.id).update({attending, num, diet, comment, filledOut:true});
+            }
+        })
+        if(!found){
+            console.error("No matching entry found");
+        }
+    } catch(error){
+        console.error("Error adding entry");
+    }
+}
+
+async function updateEntry(firstName, lastName, attending, num=0, diet='', comment=''){
+    try{
+        var entries = await rsvps.get();
+        var found = false;
+        entries.forEach(async e => {
+            var dat = e.data();
             if(dat.firstName == firstName.toLowerCase().trim() && dat.lastName == lastName.toLowerCase().trim()){
                 found = true;
-                rsvps.doc(e.id).update({firstName, lastName, attending, num, diet, comment, filledOut:true});
+                await updateFamily(dat.familyNum, attending, num, diet, comment);
             }
         })
         if(!found){
@@ -47,19 +66,12 @@ async function findInvite(firstName, lastName){
                 var names = await getFamilyMembers(dat.familyNum);
                 document.getElementById('inviteForLine').textContent = "Invite For " + names;
                 window.scrollTo(0, 0);
-                if(!dat.filledOut){
+                if(!dat.filledOut && !existing){
                     document.getElementById('alreadyFilledOut').style.display = 'none';
                 }
-                else{
-                    document.querySelector('#numAttending input').value = dat.num;
-                    document.querySelector('#dietComments textarea').value = dat.diet;
-                    document.querySelector('#otherComments textarea').value = dat.comment;
-                    if(dat.attending){
-                        rsvpButton('accept');
-                    }
-                    else{
-                        rsvpButton('reject');
-                    }
+                else if (dat.filledOut && !existing){
+                    fillExisting(dat);
+                    existing = true;
                 }
             }
         })
@@ -71,6 +83,20 @@ async function findInvite(firstName, lastName){
         console.error("Error adding entry");
     }
 }
+
+function fillExisting(dat){
+    document.querySelector('#numAttending input').value = dat.num;
+        document.querySelector('#dietComments textarea').value = dat.diet;
+        document.querySelector('#otherComments textarea').value = dat.comment;
+        if(dat.attending){
+            rsvpButton('accept');
+        }
+        else{
+            rsvpButton('reject');
+        }
+    existing = true;
+}
+
 async function getFamilyMembers(familyNum){
     try{
         var entries = await rsvps.get();
@@ -81,6 +107,9 @@ async function getFamilyMembers(familyNum){
             if(dat.familyNum == familyNum){
                 found = true;
                 str.push(titleCase(dat.firstName) + ' ' + titleCase(dat.lastName));
+                if(dat.filledOut){
+                    fillExisting(dat);
+                }
             }
         })
         if(!found){
@@ -95,11 +124,47 @@ async function getFamilyMembers(familyNum){
     }
 }
 
-var firstName, lastName;
-window.onload = function onload() {
-    var findInviteForm = document.getElementById('findInvitationForm');
-    var thankYouText = document.getElementById('thankYouText');
+async function getRSVPs(){
+    try{
+        var entries = await rsvps.get();
+        var resp = [];
+        var completedFamilies = [];
+        entries.forEach(e => {
+            var dat = e.data();
+            if(completedFamilies.indexOf(dat.familyNum) < 0){
+               if(dat.filledOut){
+                   resp.push(dat.familyNum + "," + dat.num +"," + dat.diet + "," + dat.comment);
+               }
+               else{
+                    resp.push(dat.familyNum + ",," + dat.diet + "," + dat.comment);
+               }
+               completedFamilies.push(dat.familyNum);
+            }
+        })
+        console.log(resp.join('\n'));
+    } catch(error){
+        console.error("Error adding entry");
+    }
+}
 
+var firstName, lastName;
+var existing = false;
+var notComingText = "​We are sorry you can't make it! You will be missed. But thank you so much for all of your love and support over the years.";
+var comingText = "We are so excited you are coming to celebrate our special day with us! If plans change or you need other accommodations, please reach out!";
+
+var findInviteForm = document.getElementById('findInvitationForm');
+var thankYouText = document.getElementById('thankYouText');
+
+//for now, until ready for RSVPs
+form.style.display = "none";
+document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
+
+// document.getElementById('RSVPFormSection').style.display = "none";
+document.getElementById('RSVPCardSection').style.display = "none";
+document.getElementById('thankYouNote').style.display = 'none';
+document.getElementById('errorFindingInvite').style.display = 'none';
+
+window.onload = function onload() {
     findInviteForm.addEventListener('submit', (e)=>{
         var val = document.getElementById('rsvpName').value.trim();
         firstName = val.split(' ')[0].toLowerCase().trim();
@@ -139,19 +204,6 @@ window.onload = function onload() {
         }
 
     })
-
-    var notComingText = "​We are sorry you can't make it! You will be missed. But thank you so much for all of your love and support over the years.";
-    var comingText = "We are so excited you are coming to celebrate our special day with us! If plans change or you need other accommodations, please reach out!";
-    
-
-    //for now, until ready for RSVPs
-    form.style.display = "none";
-    document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
-
-    // document.getElementById('RSVPFormSection').style.display = "none";
-    document.getElementById('RSVPCardSection').style.display = "none";
-    document.getElementById('thankYouNote').style.display = 'none';
-    document.getElementById('errorFindingInvite').style.display = 'none';
 }
 
 function titleCase(str) {
