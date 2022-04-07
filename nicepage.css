@@ -36350,32 +36350,60 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-sheet-1 {
-  min-height: 88px;
+  min-height: 74px;
+}
+
+.u-header .u-group-1 {
+  min-height: 54px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.u-header .u-container-layout-1 {
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .u-header .u-menu-1 {
-  margin: 22px auto;
+  margin: 0 auto;
 }
 
 .u-header .u-nav-1 {
   font-weight: 400;
   font-size: 1.5rem;
+  letter-spacing: normal;
 }
 
 .u-header .u-nav-2 {
   font-size: 1.25rem;
 }
 @media (max-width: 1199px) {
+  .u-header .u-group-1 {
+    min-height: 89px;
+  }
+
+  .u-header .u-container-layout-1 {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .u-header .u-menu-1 {
+    margin-top: 1px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media (max-width: 991px) {
   .u-header .u-menu-1 {
     width: auto;
   }
-
-  .u-header .u-nav-1 {
-    letter-spacing: normal;
+}
+@media (max-width: 767px) {
+  .u-header .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
-
-
 
  .u-footer {
   background-image: none;
