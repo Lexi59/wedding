@@ -17,7 +17,6 @@ var rsvps = db.collection("rsvps");
 
 async function updateFamily(familyNum, attending, num, diet, comment){
     try{
-        var entries = await rsvps.get();
         var found = false;
         entries.forEach(e => {
             var dat = e.data();
@@ -36,7 +35,6 @@ async function updateFamily(familyNum, attending, num, diet, comment){
 
 async function updateEntry(firstName, lastName, attending, num=0, diet='', comment=''){
     try{
-        var entries = await rsvps.get();
         var found = false;
         entries.forEach(async e => {
             var dat = e.data();
@@ -55,7 +53,6 @@ async function updateEntry(firstName, lastName, attending, num=0, diet='', comme
 
 async function findInvite(firstName, lastName){
     try{
-        var entries = await rsvps.get();
         var found = false;
         entries.forEach(async e => {
             var dat = e.data();
@@ -99,7 +96,6 @@ function fillExisting(dat){
 
 async function getFamilyMembers(familyNum){
     try{
-        var entries = await rsvps.get();
         var found = false;
         var str = [];
         entries.forEach(e => {
@@ -126,7 +122,6 @@ async function getFamilyMembers(familyNum){
 
 async function getRSVPs(){
     try{
-        var entries = await rsvps.get();
         var resp = [];
         var completedFamilies = [];
         entries.forEach(e => {
@@ -154,17 +149,19 @@ var comingText = "We are so excited you are coming to celebrate our special day 
 
 var findInviteForm = document.getElementById('findInvitationForm');
 var thankYouText = document.getElementById('thankYouText');
+var entries; 
 
 //for now, until ready for RSVPs
-form.style.display = "none";
-document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
+//form.style.display = "none";
+//document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
 
 // document.getElementById('RSVPFormSection').style.display = "none";
 document.getElementById('RSVPCardSection').style.display = "none";
 document.getElementById('thankYouNote').style.display = 'none';
 document.getElementById('errorFindingInvite').style.display = 'none';
 
-window.onload = function onload() {
+window.onload = async function onload() {
+    entries = await rsvps.get();
     findInviteForm.addEventListener('submit', (e)=>{
         var val = document.getElementById('rsvpName').value.trim();
         firstName = val.split(' ')[0].toLowerCase().trim();
@@ -194,6 +191,24 @@ window.onload = function onload() {
         if(!error){
             otherComments = document.querySelector('#otherComments textarea').value.trim();
             console.log({numAttending,dietComments,otherComments});
+            var attending = document.querySelector('#numAttending input').required?'Yes':'No';
+            var subjectStr = "New RSVP!"
+            var bodyStr = "<h1> New RSVP for " + titleCase(firstName) + ' ' + titleCase(lastName) + '</h1>';
+            if(attending == 'Yes'){
+                bodyStr += '<h2> Attending: Yes</h2><h3>Number of people: ' + numAttending + '</h3><p><strong>Diet Restrictions: </strong>'+dietComments +'</p>'
+            }
+            else{
+                bodyStr+='<h2> Attending: No'
+            }
+            bodyStr+='<p><strong>Comments: </strong>' + otherComments + "</p>"
+            
+            Email.send({
+                SecureToken : "0a28d0cd-6773-4360-a33c-b40f6d18a751",
+                To : 'ga.carlson2022@gmail.com',
+                From : "trip9919@gmail.com",
+                Subject : subjectStr,
+                Body : bodyStr
+            })
             updateEntry(firstName, lastName, document.querySelector('#numAttending input').required, numAttending, dietComments, otherComments);
             document.getElementById('RSVPCardSection').style.display = "none";
             document.getElementById('thankYouNote').style.display = '';
