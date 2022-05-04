@@ -152,8 +152,8 @@ var thankYouText = document.getElementById('thankYouText');
 var entries;
 
 //for now, until ready for RSVPs
-//form.style.display = "none";
-//document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
+form.style.display = "none";
+document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
 
 // document.getElementById('RSVPFormSection').style.display = "none";
 document.getElementById('RSVPCardSection').style.display = "none";
