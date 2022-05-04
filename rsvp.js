@@ -149,11 +149,11 @@ var comingText = "We are so excited you are coming to celebrate our special day 
 
 var findInviteForm = document.getElementById('findInvitationForm');
 var thankYouText = document.getElementById('thankYouText');
-var entries; 
+var entries;
 
 //for now, until ready for RSVPs
-form.style.display = "none";
-document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
+//form.style.display = "none";
+//document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
 
 // document.getElementById('RSVPFormSection').style.display = "none";
 document.getElementById('RSVPCardSection').style.display = "none";
@@ -201,7 +201,7 @@ window.onload = async function onload() {
                 bodyStr+='<h2> Attending: No'
             }
             bodyStr+='<p><strong>Comments: </strong>' + otherComments + "</p>"
-            
+
             Email.send({
                 SecureToken : "0a28d0cd-6773-4360-a33c-b40f6d18a751",
                 To : 'ga.carlson2022@gmail.com',
@@ -224,7 +224,7 @@ window.onload = async function onload() {
 function titleCase(str) {
     str = str.toLowerCase().split(' ');
     for (var i = 0; i < str.length; i++) {
-      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
     }
     return str.join(' ');
 }
