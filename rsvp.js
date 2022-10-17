@@ -153,9 +153,9 @@ var entries;
 
 //for now, until ready for RSVPs
 form.style.display = "none";
-document.getElementById('rsvpMessage').textContent = "We aren't quite ready for RSVPs yet. Check back later!"
+document.getElementById('rsvpMessage').textContent = "Thank you to everyone who came to celebrate with us!"
 
-document.getElementById('RSVPFormSection').style.display = "none";
+//document.getElementById('RSVPFormSection').style.display = "none";
 document.getElementById('RSVPCardSection').style.display = "none";
 document.getElementById('thankYouNote').style.display = 'none';
 document.getElementById('errorFindingInvite').style.display = 'none';
